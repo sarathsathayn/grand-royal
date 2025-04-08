@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+
+        
+/* Carousel Custom Styles */
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;  /* Keep it 10% from the bottom */
+    right: 5%;    /* 5% from the right side of the carousel */
+    transform: translateX(0);  /* No horizontal shift */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* Ensure the caption text stays within bounds */
+    text-align: right; /* Align the text to the right for better layout */
+}
+
+.carousel-caption h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-nav .nav-item {
+        padding: 10px 0;
+    }
+    .navbar-nav .btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+        .product-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            text-align: left;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+        .footer {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.footer h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.footer a {
+    margin: 0 15px;
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.footer a .fab {
+    transition: color 0.3s ease;
+}
+.footer a .fa-facebook {
+    color: #3b5998;
+}
+.footer a .fa-whatsapp {
+    color: #25d366;
+}
+.footer a .fa-instagram {
+    color: #e4405f;
+}
+.footer a:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Video Carousel Section -->
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay muted loop>
+                    <source src="images/main vedio.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h3>Water Purification Process</h3>
+                    <p>Our advanced filtration methods ensure clean and safe drinking water.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop>
+                    <source src="images/main vedio.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h3>Why Choose Us?</h3>
+                    <p>High-quality water purifiers for your family’s health and safety.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop>
+                    <source src="images/main vedio.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h3>Pure Water, Pure Life</h3>
+                    <p>Experience the purity with AquaPure’s advanced water solutions.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+
+
+    <div class="container">
+        <div id="product-details" class="product-container">
+            <h2 id="product-name"></h2>
+            <img id="product-image" alt="Product Image">
+            <p id="product-description"></p>
+            <h4 id="product-price" class="text-success"></h4>
+            <ul id="product-features"></ul>
+            <a id="buy-now" class="btn btn-success" target="_blank">Buy on WhatsApp</a>
+            <br>
+            <a href="index.html" class="btn btn-secondary back-button">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const products = {
+            product1: {
+                name: "CLEAR UV",
+                image: "images/clear uv1.png",
+                description: "Advanced RO+UV purification with mineral guard technology.",
+                price: "₹10,990",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "UV HEAVY E-BOILING",
+                    "TDS ADJUSTER TECHNOLOGY",
+                    "MINERAL GAURD",
+                    "FULLY AUTOMATIC",
+                    "9LTR STORAGE",
+                    "WITH PRE FILTER",
+
+                ]
+            },
+            product2: {
+                name: "CRYSTAL 18",
+                image: "images/crystal181.png",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹19,900",
+                whatsapp:"https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "SUPERIOR *DUAL RO* PURIFICATION",
+                    "UV HEAVY E-BOILING",
+                    "TDS ADJUSTER TECHNOLOGY",
+                    "MINERAL GAURD",
+                    "RO+UV+UF+TDS+ALK",
+                    "18 LTR STORAGER",
+                    "25-30 LTR/HR",
+                    "FULLY AUTOMATIC",
+                    "WALL MOUNTED",
+                    "WITH PRE FILTER"
+                ]
+            },
+            product3: {
+                name: "CLEAR",
+                image: "images/clear1.png",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹12,990",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "SUPERIOR RO PURIFICATION",
+                    "TDS ADJUSTER TECHNOLOGY",
+                    "ULTRA FILTRATION",
+                    "MINERAL GAURD",
+                    "RO+UV+UF+TDS+ALK",
+                    "9 LTR STORAGE",
+                    "FULLY AUTOMATIC",
+                    "WALL MOUNTED",
+                    "WITH PRE FILTER"
+
+                ]
+            },
+            product4: {
+                name: "EXTRA PURE",
+                image: "images/extra pure1.png",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹16,990",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "UV HEAVY E-BOILING",
+                    "TDS ADJUSTER TECHNOLOGY",
+                    "MINERAL GAURD",
+                    "RO+UV+UF+TDS+ALK",
+                    "12 LTR STORAGE",
+                    "15-20 LTR / HR",
+                    "FULLY AUTOMATIC",
+                    "WALL MOUNTED",
+                    "WITH PRE FILTER"
+
+                ]
+            },
+            product5: {
+                name: "PURE",
+                image: "images/pure-min2.png",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹15,900",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "SUPERIOR RO PURIFICATION",
+                    "UV HEAVY E-BOILING",
+                    "TDS ADJUSTER TECHNOLOGY",
+                    "MINERAL GAURD",
+                    "RO+UV+UF+TDS+ALK",
+                    "12 LTR STORAGE",
+                    "FULLY AUTOMATIC",
+                    "WITH PRE FILTER",
+                    "15-20 LTR / HR"
+                ]
+            },
+            product6: {
+                name: "WAVE",
+                image: "images/wave new.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹19,900",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Advanced Filtration",
+                    "LED Indicators",
+                    "Wall-Mounted Design",
+                    "Domestic Use",
+                    "Purification Stages: 2-stage"
+                ]
+            },
+            product7: {
+                name: "AQUAGUARD GLORY",
+                image: "images/aquaguard glory.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹19,000",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Electrical & Storage : Electric purification - suitable for areas with water shortage",
+                    "6 L : More the capacity, more the users can be served with drinking water",
+                    "RO + UV + MTDS : Uses many filters to purify water and enhance taste",
+                    "Auto shut-off feature"
+                ]
+            },
+            product8: {
+                name: "AQUAGUARD SURE",
+                image: "images/aquaguard sure.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹17,000",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "	RO+UV Purification",
+                    "Energy Saving",
+                    "LED Indicators",
+                    "Superior Purification",
+                    "Superior RO Maxx Technology",
+                    "UV E-Boiling Technnology",
+                     "Long Cartridge Life"
+                ]
+            },
+            product9: {
+                name: "KENT ACE",
+                image: "images/kent new1.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹18,900",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Purity in Every Drop",
+                    "Multiple Purification Process",
+                    "Retains Essential Minerals",
+                    "UV LED Light in Storage Tank",
+                     "High Purification & Storage Capacity",
+                      "High Purification & Storage Capacity"
+                ]
+            },
+            product10: {
+                name: "OXSO LIVIK",
+                image: "images/oxso nwe.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹20,900",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "RO + UV + UF purification",
+                    "smart indicatorr",
+                    "Wall-mountable design",
+                    "Auto shut-off feature"
+                ]
+            },
+            product11: {
+                name: "WAVE PRIME",
+                image: "images/PRIME2.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹29,000",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "RO+UV+UF purification",
+                    "TDS controller",
+                    "Wall-mountable design",
+                    "Auto shut-off feature"
+                ]
+
+            },
+            product12: {
+                name: "WAVE KRYSTAL KOOL",
+                image: "images/krystal kool.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹18,900",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "RO+UV+UF purification",
+                    "TDS controller",
+                    "Wall-mountable design",
+                    "Auto shut-off feature"
+                ]
+
+            },
+            product13: {
+                name: "COMMERCIAL RO PLANTS",
+                image: "images/ro plant.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹20900 onwards",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "25 LPH",
+                    "50 LPH",
+                    "100 LPH",
+                    "150 LPH",
+                    "200 LPH",
+                    "500 LPH"
+                ]
+                
+            },
+            product14: {
+                name: "aqua7 extra PURE stainless steel Dispencer",
+                image: "images/stainless steel.avif",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "₹22,000 onwards",
+                whatsapp:"https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "High Durability: Made from SUS304 stainless steel, ensuring long-lasting performance and resistance to rust and corrosion.",
+                    "Hygienic Desing: Stainless steel construction prevents contamination and does not retain odors or flavors. Choosing a Stainless steel water dispenser supplier in India ensures premium hygiene standards.",
+                    "Efficient Cooling: Advanced compressor-based cooling systems provide rapid and efficient cooling.",
+                    "User-Friendly Operation: Simple tap mechanism with options for hot and cold water, including child safety locks on hot water taps."
+                ]
+            },
+            product15: {
+                name: "ATLANTIC FRP VESSELS",
+                image: "images/arlantic frp vessels.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: " ₹20,000 onwards ",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Durable & Leak-Proof Construction ",
+                    "Handles High Pressure & Temperature",
+                    "Certified for Drinking Water Applications",
+                    "Excellent surface and base finish",
+                    "Max operating Pressure: 150 PSI",
+                    "Min Burst Pressure: 600 PSI",
+                    "Max operating Temperature: 50 deg C",
+                    "Max vacuum pressure: 5” Hg Column (GSE strongly advises use of vacuum breaker with FRP vessels)",
+                    "Trouble Free performance without leakage"
+                ]
+            },
+            product16: {
+                name: "ALFA AEROSOL FRP VESSELS",
+                image: "images/alfa aerosel frp vessels.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "  ₹20,000 onwards",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Working Pressure Over 150psi.",
+                    "Eco-Friendly Leak Proof As There No Welds",
+                    "Free from rust and formation of algae in the vessel.",
+                    "High resistence to chemicals with outstanding durability in harsh environments.",
+                    "Used for various applications like water softener, sand filter, carbon filter, iron removal filter etc."
+                ]
+            },
+            product17: {
+                name: "TATA FRP VESSELS",
+                image: "images/tata frp vessel.jpg",
+                description: "Double purification with RO+UV+UF for pure and safe water.",
+                price: "  ₹20,000 onwards",
+                whatsapp: "https://wa.me/9207391279?text=I%20am%20interested%20in%20Aquaguard%20Sure",
+                features: [
+                    "Corrosion Resistance – Designed to withstand harsh chemical environments, ensuring a long-lasting and reliable performance.",
+                    "Lightweight Design – Easy to install due to the reduced weight compared to traditional tanks, cutting down on installation time and costs.",
+                    "Low Maintenance – Requires minimal upkeep, reducing the need for frequent repairs or replacements.",
+                    "Durability & Strength – High-grade construction offers outstanding durability, even under high-pressure conditions.",
+                    "Efficient Filtration – Ideal for Reverse Osmosis (RO) systems, removing dissolved chemicals and suspended particles to ensure safe drinking water.",
+                    "Versatile Applications – Can be used in various water treatment systems, including residential, commercial, and industrial applications.",
+                    
+                ]
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("productId");
+
+        if (productId && products[productId]) {
+            document.getElementById("product-name").innerText = products[productId].name;
+            document.getElementById("product-image").src = products[productId].image;
+            document.getElementById("product-price").innerText = products[productId].price;
+            document.getElementById("buy-now").href = products[productId].whatsapp;
+
+            const featuresList = document.getElementById("product-features");
+            products[productId].features.forEach(feature => {
+                const li = document.createElement("li");
+                li.innerText = feature;
+                featuresList.appendChild(li);
+            });
+        } else {
+            document.getElementById("product-details").innerHTML = "<p class='text-danger'>Product not found!</p>";
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <h4>Contact Us</h4>
+        <ul>
+            <li>📞 Phone: +91 9207391279</li>
+            <li>📧 Email: grandroyalaquacare@gmail.com</li>
+            <li>📍 Location: Cherupuzha ,Kannur 670511</li>
+        </ul>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=61573858027261" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/9544304011?text=Can%20I%20get%20more%20info%20about%20this%20product?1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,932 @@
+  /* Navbar Custom Styles */
+  .navbar {
+    background: linear-gradient(to right, #0A1931, #5D4037);
+    padding: 15px 0;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-size: 1rem;
+    margin-right: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #FFC107 !important;
+}
+
+.navbar .btn {
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar .btn:hover {
+    background-color: #FFC107;
+    color: black !important;
+}
+.btn-call {
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out;
+}
+.btn-call:hover {
+    background: #007bff;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Carousel Custom Styles */
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;  /* Keep it 10% from the bottom */
+    right: 5%;    /* 5% from the right side of the carousel */
+    transform: translateX(0);  /* No horizontal shift */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* Ensure the caption text stays within bounds */
+    text-align: right; /* Align the text to the right for better layout */
+}
+
+.carousel-caption h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-nav .nav-item {
+        padding: 10px 0;
+    }
+    .navbar-nav .btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Company Section Styling */
+/* About Our Company Section */
+.about-company {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #00b4d8, #90e0ef); /* Light blue to soft teal gradient */
+    color: white;
+    text-align: center;
+}
+
+.about-company h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-company p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-company img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-company {
+        text-align: left;
+    }
+
+    .about-company h2 {
+        font-size: 2rem;
+    }
+
+    .about-company p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Certification Section Styles */
+.certification-section {
+    text-align: center;
+    padding: 40px 0;
+    background: #c1d0de; /* Light background color */
+    margin-top: 5px; /* Space from any other section */
+}
+
+.certification-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark text for the heading */
+}
+
+/* 3D rotating container */
+.certification-section .slider-container {
+    perspective: 1500px;
+    width: 100%;
+    max-width: 800px; /* Increase the container size */
+    height: 800px; /* Increase the container size */
+    margin: auto;
+    position: relative;
+    
+}
+
+/* Slider for rotation */
+.certification-section .slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotateSlider 12s infinite ease-in-out;
+}
+
+/* Individual image in the slider with larger circle size */
+.certification-section .slide {
+    width: 250px; /* Increase width for larger circles */
+    height: 250px; /* Increase height for larger circles */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures image is clipped within circle */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border: 5px solid white; /* Optional: adds white border for better visibility */
+}
+
+/* Add the images with round shape */
+.certification-section .certification-image {
+    width: 100%; /* Make image fit the circle */
+    height: 100%; /* Make image fit the circle */
+    object-fit: cover; /* Ensures the image covers the circle area without distortion */
+}
+
+/* Positioning each image in a circle */
+.certification-section .slide:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px); /* Increase translateZ for better visibility */
+}
+.certification-section .slide:nth-child(2) {
+    transform: rotateY(120deg) translateZ(300px); /* Increase translateZ for better visibility */
+}
+.certification-section .slide:nth-child(3) {
+    transform: rotateY(240deg) translateZ(300px); /* Increase translateZ for better visibility */
+}
+
+/* Keyframe to rotate the slider */
+@keyframes rotateSlider {
+    0% {
+        transform: rotateY(0deg);
+    }
+    33% {
+        transform: rotateY(-120deg);
+    }
+    66% {
+        transform: rotateY(-240deg);
+    }
+    100% {
+        transform: rotateY(-360deg);
+    }
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+    .certification-section .slider-container {
+        max-width: 600px; /* Adjust container size for medium screens */
+        height: 600px; /* Adjust height for medium screens */
+    }
+
+    .certification-section .slide {
+        width: 200px; /* Reduce circle size for medium screens */
+        height: 200px; /* Reduce circle size for medium screens */
+    }
+
+    .certification-section .slide:nth-child(1) {
+        transform: rotateY(0deg) translateZ(250px);
+    }
+    .certification-section .slide:nth-child(2) {
+        transform: rotateY(120deg) translateZ(250px);
+    }
+    .certification-section .slide:nth-child(3) {
+        transform: rotateY(240deg) translateZ(250px);
+    }
+}
+
+@media (max-width: 768px) {
+    .certification-section .slider-container {
+        max-width: 500px; /* Adjust container size for smaller screens */
+        height: 500px; /* Adjust height for smaller screens */
+    }
+
+    .certification-section .slide {
+        width: 180px; /* Reduce circle size for small screens */
+        height: 180px; /* Reduce circle size for small screens */
+    }
+
+    .certification-section .slide:nth-child(1) {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+    .certification-section .slide:nth-child(2) {
+        transform: rotateY(120deg) translateZ(200px);
+    }
+    .certification-section .slide:nth-child(3) {
+        transform: rotateY(240deg) translateZ(200px);
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-section .slider-container {
+        max-width: 350px; /* Adjust container size for small screens */
+        height: 350px; /* Adjust height for small screens */
+    }
+
+    .certification-section .slide {
+        width: 150px; /* Further reduce circle size for very small screens */
+        height: 150px; /* Further reduce circle size for very small screens */
+    }
+
+    .certification-section .slide:nth-child(1) {
+        transform: rotateY(0deg) translateZ(150px);
+    }
+    .certification-section .slide:nth-child(2) {
+        transform: rotateY(120deg) translateZ(150px);
+    }
+    .certification-section .slide:nth-child(3) {
+        transform: rotateY(240deg) translateZ(150px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Why Choose Us Section Styles */
+.choose-us-section {
+    background: linear-gradient(to right, #e0f7fa, #f0f4f8); /* Light gradient background */
+    padding: 60px 0; /* Top and bottom padding */
+}
+
+.choose-us-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.choose-us-section .row {
+    display: flex;
+    align-items: center;
+}
+
+/* Left Section (Image) */
+.choose-us-section img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Section (4 Cards) */
+.choose-us-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.choose-us-card h5 {
+    font-size: 1.25rem;
+    color: #00796b;
+    margin-bottom: 10px;
+}
+
+.choose-us-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.choose-us-card:hover {
+    transform: translateY(-10px); /* Adds hover effect */
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .choose-us-section .container {
+        padding: 0 15px;
+    }
+
+    .choose-us-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choose-us-section img {
+        margin-bottom: 30px;
+    }
+
+    .choose-us-section .choose-us-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Styling */
+.video-and-numbers {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #4e73df, #1c1c1c); /* Gradient Background */
+    color: white;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.success-numbers {
+    text-align: center;
+}
+
+.success-numbers h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.success-numbers ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.success-numbers li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+}
+
+.success-numbers .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .video-and-numbers {
+        padding: 60px 20px;
+    }
+
+    .success-numbers h2 {
+        font-size: 1.5rem;
+    }
+
+    .success-numbers li {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Welcome Section Styles */
+.welcome-section {
+    padding: 60px 0;
+    background: linear-gradient(to right, #00b4d8, #0288d1); /* Blue gradient background */
+}
+
+.left-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.left-section .btn {
+    background-color: #0288d1;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.left-section .btn:hover {
+    background-color: #01579b;
+    color: #fff;
+}
+
+.right-section img {
+    width: 100%;
+    height: auto; /* Allow the image to display its full size */
+    max-width: 350px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .welcome-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-section {
+        margin-bottom: 30px;
+    }
+
+    .right-section img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-section h2 {
+        font-size: 2rem;
+    }
+
+    .left-section p {
+        font-size: 1rem;
+    }
+
+    .left-section .btn {
+        padding: 10px 20px;
+    }
+
+    .right-section img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-section p {
+        font-size: 0.9rem;
+    }
+
+    .left-section .btn {
+        padding: 8px 16px;
+    }
+
+    .right-section img {
+        max-width: 200px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Product Section Styles */
+.product-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+h2 {
+    color: #007bff;
+    text-align: center;
+}
+
+/* Product cards */
+.product-card {
+    border: 1px solid #b61616;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card .card-body {
+    text-align: center;
+}
+
+/* Centering product name */
+.product-card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-card .btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Responsive layout for product cards */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Styling for Product Detail Page */
+.product-detail-container {
+    max-width: 900px;
+    margin-top: 50px;
+}
+
+.product-detail-container .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-detail-container button {
+    margin-top: 10px;
+}
+
+/* Add more styles for buttons */
+.product-detail-container .btn {
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Trusted Clients Section */
+ .trusted-clients {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+}
+.trusted-clients h3 {
+    margin-bottom: 30px;
+}
+.client-logos {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    justify-content: center;
+}
+.client-logos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 15px;
+    animation: slide 10s linear infinite;
+}
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
+
+
+/* === OUR WORK SECTION STYLES === */
+.our-work-section {
+    padding: 60px 0;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+  }
+  
+  .our-work-section h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .our-work-section .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .our-work-section .work-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .our-work-section .work-img:hover {
+    transform: scale(1.02);
+  }
+  
+  .our-work-section #toggleButton {
+    background-color: #333;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .our-work-section #toggleButton:hover {
+    background-color: #000;
+  }
+  
+  .our-work-section .d-none {
+    display: none !important;
+  }
+  
+  /* Responsive tweaks only inside our-work-section */
+  @media (max-width: 768px) {
+    .our-work-section h2 {
+      font-size: 1.8rem;
+    }
+  
+    .our-work-section .work-img {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .our-work-section .work-img {
+      aspect-ratio: 4 / 3;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+.our-services {
+    background: linear-gradient(135deg, #3146e5, #ff7eb3);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.service-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.service-card h4 {
+    font-size: 22px;
+    font-weight: bold;
+}
+.service-card p {
+    font-size: 16px;
+}
+
+
+
+
+.review-section {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    color: #fff;
+    padding: 50px 0;
+  }
+
+  .card {
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .star {
+    font-size: 26px;
+    cursor: pointer;
+    color: transparent;
+    text-shadow: 0 0 1px gold; /* border-like effect */
+    transition: color 0.2s, text-shadow 0.2s;
+  }
+
+  .star.selected {
+    color: gold;
+    text-shadow: none;
+  }
+
+  .rounded-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .star-display {
+    font-size: 20px;
+    color: gold;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.footer h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.footer p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.footer a {
+    margin: 0 15px;
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.footer a .fab {
+    transition: color 0.3s ease;
+}
+.footer a .fa-facebook {
+    color: #3b5998;
+}
+.footer a .fa-whatsapp {
+    color: #25d366;
+}
+.footer a .fa-instagram {
+    color: #e4405f;
+}
+.footer a:hover {
+    transform: scale(1.2);
+}
+
+
+
+
