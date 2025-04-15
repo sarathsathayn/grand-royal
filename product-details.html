@@ -7,14 +7,15 @@
     <title>Product Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-      <!-- Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-      <!-- Bootstrap Icons -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  
-  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,56 +23,63 @@
 
 
 
-        
-/* Carousel Custom Styles */
-.carousel-item {
-    position: relative;
-}
 
-.carousel-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        /* Carousel Custom Styles */
+        .carousel-item {
+            position: relative;
+        }
 
-.carousel-caption {
-    position: absolute;
-    bottom: 10%;  /* Keep it 10% from the bottom */
-    right: 5%;    /* 5% from the right side of the carousel */
-    transform: translateX(0);  /* No horizontal shift */
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    max-width: 80%; /* Ensure the caption text stays within bounds */
-    text-align: right; /* Align the text to the right for better layout */
-}
+        .carousel-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.carousel-caption h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .carousel-caption {
+            position: absolute;
+            bottom: 10%;
+            /* Keep it 10% from the bottom */
+            right: 5%;
+            /* 5% from the right side of the carousel */
+            transform: translateX(0);
+            /* No horizontal shift */
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+            /* Ensure the caption text stays within bounds */
+            text-align: right;
+            /* Align the text to the right for better layout */
+        }
 
-.carousel-caption p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
+        .carousel-caption h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
 
 
-/* Responsive Design */
-@media (max-width: 991px) {
-    .navbar-nav {
-        text-align: center;
-        width: 100%;
-    }
-    .navbar-nav .nav-item {
-        padding: 10px 0;
-    }
-    .navbar-nav .btn {
-        display: block;
-        width: 100%;
-        margin-top: 10px;
-    }
-}
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                text-align: center;
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item {
+                padding: 10px 0;
+            }
+
+            .navbar-nav .btn {
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
 
         .product-container {
             max-width: 800px;
@@ -98,41 +106,78 @@
         .back-button {
             margin-top: 20px;
         }
+
         .footer {
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: white;
-    padding: 50px 0;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            margin: 0 15px;
+            font-size: 30px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .footer a .fab {
+            transition: color 0.3s ease;
+        }
+
+        .footer a .fa-facebook {
+            color: #3b5998;
+        }
+
+        .footer a .fa-whatsapp {
+            color: #25d366;
+        }
+
+        .footer a .fa-instagram {
+            color: #e4405f;
+        }
+
+        .footer a:hover {
+            transform: scale(1.2);
+        }
+
+
+
+
+        .aqua7-gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.aqua7-image-card {
+    width: 200px;
     text-align: center;
 }
-.footer h4 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+.aqua7-image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
-.footer p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.footer a {
-    margin: 0 15px;
-    font-size: 30px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-.footer a .fab {
-    transition: color 0.3s ease;
-}
-.footer a .fa-facebook {
-    color: #3b5998;
-}
-.footer a .fa-whatsapp {
-    color: #25d366;
-}
-.footer a .fa-instagram {
-    color: #e4405f;
-}
-.footer a:hover {
-    transform: scale(1.2);
+
+.aqua7-image-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
     </style>
@@ -191,13 +236,19 @@
             <a id="buy-now" class="btn btn-success" target="_blank">Buy on WhatsApp</a>
             <br>
             <a href="index.html" class="btn btn-secondary back-button">Back to Home</a>
+            <div id="extra-gallery" class="aqua7-gallery" style="display: none;"></div>
+            
+
+
         </div>
     </div>
 
     <script>
+
+
         const products = {
             product1: {
-                name: "CLEAR UV",
+                name: "aqua7extraPure CLEAR UV",
                 image: "images/clear uv1.png",
                 description: "Advanced RO+UV purification with mineral guard technology.",
                 price: "₹10,990",
@@ -213,11 +264,11 @@
                 ]
             },
             product2: {
-                name: "CRYSTAL 18",
+                name: "aqua7extraPure CRYSTAL 18",
                 image: "images/crystal181.png",
                 description: "Double purification with RO+UV+UF for pure and safe water.",
                 price: "₹19,900",
-                whatsapp:"https://wa.me/+919207391279?text=I%20am%20interested%20in%20Crystal%2018",
+                whatsapp: "https://wa.me/+919207391279?text=I%20am%20interested%20in%20Crystal%2018",
                 features: [
                     "SUPERIOR *DUAL RO* PURIFICATION",
                     "UV HEAVY E-BOILING",
@@ -232,7 +283,7 @@
                 ]
             },
             product3: {
-                name: "CLEAR",
+                name: "aqua7extraPure CLEAR",
                 image: "images/clear1.png",
                 description: "Double purification with RO+UV+UF for pure and safe water.",
                 price: "₹12,990",
@@ -251,7 +302,7 @@
                 ]
             },
             product4: {
-                name: "EXTRA PURE",
+                name: "aqua7extraPure EXTRA PURE",
                 image: "images/extra pure1.png",
                 description: "Double purification with RO+UV+UF for pure and safe water.",
                 price: "₹16,990",
@@ -270,8 +321,9 @@
                 ]
             },
             product5: {
-                name: "PURE",
+                name: "aqua7extraPure PURE",
                 image: "images/pure-min2.png",
+                logo: "images/logo2.png", 
                 description: "Double purification with RO+UV+UF for pure and safe water.",
                 price: "₹15,900",
                 whatsapp: "https://wa.me/+919207391279?text=I%20am%20interested%20in%20Pure",
@@ -327,7 +379,7 @@
                     "Superior Purification",
                     "Superior RO Maxx Technology",
                     "UV E-Boiling Technnology",
-                     "Long Cartridge Life"
+                    "Long Cartridge Life"
                 ]
             },
             product9: {
@@ -341,8 +393,8 @@
                     "Multiple Purification Process",
                     "Retains Essential Minerals",
                     "UV LED Light in Storage Tank",
-                     "High Purification & Storage Capacity",
-                      "High Purification & Storage Capacity"
+                    "High Purification & Storage Capacity",
+                    "High Purification & Storage Capacity"
                 ]
             },
             product10: {
@@ -400,20 +452,24 @@
                     "200 LPH",
                     "500 LPH"
                 ]
-                
+
             },
             product14: {
                 name: "aqua7 extra PURE stainless steel Dispencer",
                 image: "images/stainless steel.avif",
                 description: "Double purification with RO+UV+UF for pure and safe water.",
                 price: "₹22,000 onwards",
-                whatsapp:"https://wa.me/+919207391279?text=I%20am%20interested%20in%20aqua7 extra PURE stainless steel Dispencer",
+                whatsapp: "https://wa.me/+919207391279?text=I%20am%20interested%20in%20aqua7 extra PURE stainless steel Dispencer",
                 features: [
                     "High Durability: Made from SUS304 stainless steel, ensuring long-lasting performance and resistance to rust and corrosion.",
                     "Hygienic Desing: Stainless steel construction prevents contamination and does not retain odors or flavors. Choosing a Stainless steel water dispenser supplier in India ensures premium hygiene standards.",
                     "Efficient Cooling: Advanced compressor-based cooling systems provide rapid and efficient cooling.",
                     "User-Friendly Operation: Simple tap mechanism with options for hot and cold water, including child safety locks on hot water taps."
                 ]
+
+
+
+
             },
             product15: {
                 name: "ATLANTIC FRP VESSELS",
@@ -460,29 +516,80 @@
                     "Durability & Strength – High-grade construction offers outstanding durability, even under high-pressure conditions.",
                     "Efficient Filtration – Ideal for Reverse Osmosis (RO) systems, removing dissolved chemicals and suspended particles to ensure safe drinking water.",
                     "Versatile Applications – Can be used in various water treatment systems, including residential, commercial, and industrial applications.",
-                    
+
                 ]
             }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get("productId");
+const productId = urlParams.get("productId");
 
-        if (productId && products[productId]) {
-            document.getElementById("product-name").innerText = products[productId].name;
-            document.getElementById("product-image").src = products[productId].image;
-            document.getElementById("product-price").innerText = products[productId].price;
-            document.getElementById("buy-now").href = products[productId].whatsapp;
+if (productId && products[productId]) {
+    document.getElementById("product-name").innerText = products[productId].name;
+    document.getElementById("product-image").src = products[productId].image;
+    document.getElementById("product-price").innerText = products[productId].price;
+    document.getElementById("buy-now").href = products[productId].whatsapp;
 
-            const featuresList = document.getElementById("product-features");
-            products[productId].features.forEach(feature => {
-                const li = document.createElement("li");
-                li.innerText = feature;
-                featuresList.appendChild(li);
-            });
-        } else {
-            document.getElementById("product-details").innerHTML = "<p class='text-danger'>Product not found!</p>";
-        }
+    const featuresList = document.getElementById("product-features");
+    products[productId].features.forEach(feature => {
+        const li = document.createElement("li");
+        li.innerText = feature;
+        featuresList.appendChild(li);
+    });
+} else {
+    document.getElementById("product-details").innerHTML = "<p class='text-danger'>Product not found!</p>";
+}
+
+// ⬇️ GALLERY IMAGES SETUP
+const productGalleries = {
+    product14: [
+        { name: "Cool Touch Dispenser", image: "images/1.1 dispencer.jpg" },
+        { name: "Triple Purification System", image: "images/stainless steel.avif" },
+        { name: "Elegant Steel Design", image: "images/3 dispencer.jpg" }
+    ],
+    product15: [
+        { name: "1 vessel", image: "images/1.2.png" },
+        { name: "2 vessel", image: "images/2.2.png" },
+        { name: "3 vessel", image: "images/3.3.png" }
+    ],
+    product16: [
+        { name: "1 vessel", image: "images/1.2.png" },
+        { name: "2 vessel", image: "images/2.2.png" },
+        { name: "3 vesselt", image: "images/3.3.png" }
+    ],
+    product17: [
+        { name: "1 vessel", image: "images/1.2.png" },
+        { name: "2 vessel", image: "images/2.2.png" },
+        { name: "3 vessel", image: "images/3.3.png" }
+    ]
+};
+
+// ⬇️ DISPLAY gallery only if productId matches one above
+if (productGalleries[productId]) {
+    const galleryContainer = document.getElementById("extra-gallery");
+    galleryContainer.style.display = "flex";
+    galleryContainer.innerHTML = ""; // clear any old images
+
+    productGalleries[productId].forEach(item => {
+        const card = document.createElement("div");
+        card.className = "aqua7-image-card";
+
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+
+        const name = document.createElement("p");
+        name.textContent = item.name;
+
+        card.appendChild(img);
+        card.appendChild(name);
+        galleryContainer.appendChild(card);
+    });
+}
+
+
+
+
     </script>
 
 
@@ -501,22 +608,24 @@
 
 
 
-<!-- Footer Section -->
-<footer class="footer">
-    <div class="container">
-        <h4>Contact Us</h4>
-        <ul>
-            <li>📞 Phone: +91 9207391279</li>
-            <li>📧 Email: grandroyalaquacare@gmail.com</li>
-            <li>📍 Location: Cherupuzha ,Kannur 670511</li>
-        </ul>
-        <div>
-            <a href="https://www.facebook.com/profile.php?id=61573858027261" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/9544304011?text=Can%20I%20get%20more%20info%20about%20this%20product?1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <h4>Contact Us</h4>
+            <ul>
+                <li>📞 Phone: +91 9207391279</li>
+                <li>📧 Email: grandroyalaquacare@gmail.com</li>
+                <li>📍 Location: Cherupuzha ,Kannur 670511</li>
+            </ul>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=61573858027261" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/9544304011?text=Can%20I%20get%20more%20info%20about%20this%20product?1"
+                    target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 
 </html>
