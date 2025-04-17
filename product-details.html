@@ -155,30 +155,45 @@
 
 
 
-        .aqua7-gallery-container {
+   /* For vertical stacking */
+.aqua7-gallery {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack vertically */
     gap: 20px;
-    margin-top: 30px;
-    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
+/* Styling each image card */
 .aqua7-image-card {
-    width: 200px;
     text-align: center;
+    width: 100%;
+    max-width: 400px;
 }
 
 .aqua7-image-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .aqua7-image-card p {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+    color: #333;
 }
+
+.aqua7-image-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.aqua7-image-card li {
+    line-height: 1.5;
+}
+
+
 
     </style>
 </head>
@@ -242,6 +257,7 @@
 
         </div>
     </div>
+    <div id="extra-gallery"></div>
 
     <script>
 
@@ -350,7 +366,7 @@
                     "LED Indicators",
                     "Wall-Mounted Design",
                     "Domestic Use",
-                    "Purification Stages: 2-stage"
+                    "Purification Stages: 7-stage"
                 ]
             },
             product7: {
@@ -542,33 +558,140 @@ if (productId && products[productId]) {
 
 // ⬇️ GALLERY IMAGES SETUP
 const productGalleries = {
-    product14: [
-        { name: "Cool Touch Dispenser", image: "images/1.1 dispencer.jpg" },
-        { name: "Triple Purification System", image: "images/stainless steel.avif" },
-        { name: "Elegant Steel Design", image: "images/3 dispencer.jpg" }
-    ],
-    product15: [
-        { name: "1 vessel", image: "images/1.2.png" },
-        { name: "2 vessel", image: "images/2.2.png" },
-        { name: "3 vessel", image: "images/3.3.png" }
-    ],
-    product16: [
-        { name: "1 vessel", image: "images/1.2.png" },
-        { name: "2 vessel", image: "images/2.2.png" },
-        { name: "3 vessel", image: "images/3.3.png" }
-    ],
-    product17: [
-        { name: "1 vessel", image: "images/1.2.png" },
-        { name: "2 vessel", image: "images/2.2.png" },
-        { name: "3 vessel", image: "images/3.3.png" }
-    ]
+    product13: [
+    {
+        name: "",
+        image: "images/500 lph.jpg",
+        features: [
+            
+        ]
+    },
+    {
+        name: "",
+        image: "images/200 lph.webp",
+        features: [
+           
+        ]
+    },
+    {
+        name: "",
+        image: "images/ro plant.jpg",
+        features: [
+           
+        ]
+    }
+],
+
+product14: [
+    {
+        name: "Cool Touch Dispenser",
+        image: "images/1.1 dispencer.jpg",
+        features: ["RO + UV + UF technology (optional)", "Normal water"]
+    },
+    {
+        name: "Triple Purification System",
+        image: "images/stainless steel.avif",
+        features: ["RO + UV + UF technology (optional) ", "Normal water&Hot water   (OR) ", "Normal water&Cold wate",]
+    },
+    {
+        name: "Elegant Steel Design",
+        image: "images/3 dispencer.jpg",
+        features: ["RO + UV + UF technology (optional)", "Normal water", "Cold water","Hot water",]
+    }
+],
+
+    
+product15: [
+{
+        name: "Iron and Turbidity Removal Plant",
+        image: "images/1.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant",
+        image: "images/2.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            "Eliminate Calcium & Magnesium"
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant Heavy Duty",
+        image: "images/3.3.png",
+        features: [
+           
+        ]
+    }
+],
+
+product16: [
+{
+        name: "Iron and Turbidity Removal Plant",
+        image: "images/1.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant",
+        image: "images/2.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            "Eliminate Calcium & Magnesium"
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant Heavy Duty",
+        image: "images/3.3.png",
+        features: [
+           
+        ]
+    }
+],
+
+product17: [
+    {
+        name: "Iron and Turbidity Removal Plant",
+        image: "images/1.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant",
+        image: "images/2.2.png",
+        features: [
+            "Removing : Iron, Dirt, Smell, Trrbidity, Dust, Colour",
+            "Removing Media: Made in Germany, Made in Australia",
+            "Eliminate Calcium & Magnesium"
+        ]
+    },
+    {
+        name: "Iron and Turbidity Removal With Softner Plant Heavy Duty",
+        image: "images/3.3.png",
+        features: [
+            
+        ]
+    }
+]
+
 };
 
 // ⬇️ DISPLAY gallery only if productId matches one above
 if (productGalleries[productId]) {
     const galleryContainer = document.getElementById("extra-gallery");
     galleryContainer.style.display = "flex";
-    galleryContainer.innerHTML = ""; // clear any old images
+    galleryContainer.innerHTML = ""; // clear old content
 
     productGalleries[productId].forEach(item => {
         const card = document.createElement("div");
@@ -579,16 +702,25 @@ if (productGalleries[productId]) {
         img.alt = item.name;
 
         const name = document.createElement("p");
-        name.textContent = item.name;
+        name.innerHTML = `<strong>${item.name}</strong>`; // ✅ Bold product name
 
         card.appendChild(img);
         card.appendChild(name);
+
+        // ✅ Add a list of features if present
+        if (item.features && item.features.length > 0) {
+            const ul = document.createElement("ul");
+            item.features.forEach(feature => {
+                const li = document.createElement("li");
+                li.textContent = feature;
+                ul.appendChild(li);
+            });
+            card.appendChild(ul);
+        }
+
         galleryContainer.appendChild(card);
     });
 }
-
-
-
 
     </script>
 
