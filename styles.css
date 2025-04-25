@@ -962,3 +962,53 @@ h2 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For large screens, show part of the next image */
+@media (min-width: 992px) {  /* Large screens */
+    #newCarousel {
+      width: 80%;  /* Reduce width of the carousel container to show part of next image */
+      margin: 0 auto; /* Center the carousel */
+      overflow: hidden; /* Hide the overflow (anything outside the container) */
+    }
+  
+    #newCarousel .carousel-inner {
+      display: flex;
+    }
+  
+    #newCarousel .carousel-item {
+      width: 100%;  /* Make each item take up full space of the container */
+      transition: transform 0.5s ease;  /* Smooth transition for sliding */
+    }
+  
+    /* Adjust image size and position */
+    #newCarousel .carousel-item img {
+      object-fit: cover; /* Ensure the images cover the entire area */
+      object-position: center; /* Center the image */
+    }
+  
+    /* Show partial image of the next slide */
+    #newCarousel .carousel-item-next, 
+    #newCarousel .carousel-item-prev {
+      transform: scale(0.8);  /* Reduce size of the next/previous image */
+    }
+  
+    /* Adjust margins for partial images */
+    #newCarousel .carousel-control-prev,
+    #newCarousel .carousel-control-next {
+      z-index: 1;  /* Ensure the controls are on top of the carousel */
+    }
+  }
+  
